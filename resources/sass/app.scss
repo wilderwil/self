@@ -1,0 +1,190 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+*{
+    margin:0px;
+    padding:0px;
+}
+.flex{
+    display:flex;
+}
+.sidebar {
+    color: #fff;
+  //  position: absolute;
+    width: 292px;
+    height: 987px;
+    left: 0px;
+    top: 93px;
+}
+.sidebar li{
+margin-top:16px;
+position: relative;
+width: 38px;
+height: 16px;
+left: 124px;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+.sidebar ul{
+    padding-top: 352px;
+}
+/*
+body{
+    background: url("../img/KJLKL.png");
+
+}*/
+.card-login{
+width: 25rem;
+height: 35rem;
+margin-top: 20px;
+background: rgba(255, 255, 255, 0.7);
+border-radius: 24px;
+}
+.btn-profesor, .btn-alumno {
+    width: 11rem;
+    height: 2.5rem;
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+text-align: center;
+
+justify-content: center;
+}
+.btn-profesor-default,
+.btn-alumno-default{
+    background: #fff;
+    color: #C4C4C4;
+}
+.sign-up-profesor,
+.btn-profesor-select
+{
+    background: #7AC943;
+    color: #fff;
+}
+.btn-profesor-unselect{
+    background: #fff;
+    color: #3FA9F5;
+    
+}
+.btn-alumno-unselect
+{
+    background:#fff ;
+    ;
+    color: #7AC943;
+}
+.sign-up-profesor,
+.btn-alumno-select{
+    background: #3FA9F5;
+    color:#fff ;
+    
+}
+.btn-alumno{
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+    border-right: 1px solid #c4c4c4;
+}
+.btn-profesor{
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-left: 1px solid #c4c4c4;
+}
+.sign-up {
+    width: 10rem;
+    height: 2.4rem;
+    border-radius: 20px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    /* display: flex; */
+    align-items: center;
+    text-align: center;
+}
+.sign-up-default{
+    
+background: #C4C4C4;
+color: #fff;
+border: none;
+}
+.register,.register-default,.register-alumno{
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+background: #FF7BAC;
+border-radius: 24px;
+border: none;
+}
+form #email,
+form #password{
+    border-radius: 24px;
+}
+#form-register input {
+    border-top-style: none;
+    border-right-style: none;
+    background: inherit;
+    border-left-style: none;
+    box-shadow: none;
+    border-radius: 0px;
+    border-bottom: 1px solid;
+}
+.btn-link{
+    font: 'roboto';
+font-weight: 400;
+font-style: normal;
+font-size: 14px;
+color:#7AC943
+
+}
+.register-data{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+     background: #FF931E    ;
+    border-radius: 24px;
+    border: none;
+    }
+
+
+    .list-group-item-drag {
+        width: 96px;
+        border-radius: 15px;
+        height: 23px;
+        padding: 0.25rem;
+        text-align:center;
+        float:left;
+        margin:5px;
+        color:#3FA9F5;
+        font-size: 10px;
+        background: #fff;
+    }
+    .dragArea.list-group{
+        display:block;
+        width:500px;
+        height: 160px;
+    }
+    .list-group-item-drag {
+        border-top-width: 1;
+    }
