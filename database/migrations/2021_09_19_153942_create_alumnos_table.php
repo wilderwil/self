@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePreferenceUserTable extends Migration
+class CreateAlumnosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,19 @@ class CreatePreferenceUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('preference_user', function (Blueprint $table) {
+        Schema::create('alumnos', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->date('date');
+            $table->string('amigos');
+            $table->string('profesor');
+            $table->integer('course_id');
+            $table->string('asignatura');
             $table->integer('user_id');
-            $table->integer('preference_id');
             $table->timestamps();
         });
     }
-
+   
     /**
      * Reverse the migrations.
      *
@@ -28,6 +33,6 @@ class CreatePreferenceUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('preference_user');
+        Schema::dropIfExists('alumnos');
     }
 }

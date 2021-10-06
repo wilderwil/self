@@ -57,8 +57,8 @@ class User extends Authenticatable
     public function roleName(){
         return $this->role->nombre_rol;
     }
-    public function activities(){
-        return $this->hasMany(Activity::class);
+    public function activitiesUser(){
+        return $this->hasMany(ActivityUser::class);
     }
     public function preferences(){
         return $this->belongsToMany(Preference::class);

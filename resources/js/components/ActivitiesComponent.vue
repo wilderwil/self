@@ -1,15 +1,17 @@
 <template>
     <div>
-    <div
-        class="dragArea list-group">
+    <draggable
+        class="dragArea list-group"
+        :list="activities"
+        :group="{ name: 'activities', pull: 'clone', put: false }">
      <div
           class="list-group-item-drag"
           v-for="element in activities"
-          :key="element.description"
+          :key="element.id"
         >
         {{element.description}}
     </div>
-    </div>
+    </draggable>
     </div>
 </template>
 <script>

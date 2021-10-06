@@ -11,4 +11,7 @@ class Course extends Model
     protected $filliable = [
         'course'
     ];
+    public function horariosCourse(){
+        return $this->hasMany(Horario::class);
+    }
 }

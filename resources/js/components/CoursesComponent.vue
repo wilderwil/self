@@ -1,14 +1,14 @@
 <template>
     <div>
 
-<select v-model="selected" name="course" seleccionado="selected">
-  <option v-for="course in courses" :key=" course.id" v-bind:value=" course.course " >
+<select v-model="selected" name="course_id" seleccionado="selected" id="course_select">
+  <option v-for="course in courses" :key=" course.id" v-bind:value=" course.id " >
     {{ course.course }}
     
   </option>
   
 </select>
-<input id="prueba" v-bind:value="selected" >
+
     </div>
     
 </template>

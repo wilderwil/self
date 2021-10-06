@@ -84,11 +84,11 @@ return [
     |
     */
 
-    'layout_topnav' => null,
-    'layout_boxed' => null,
-    'layout_fixed_sidebar' => true,
+    'layout_topnav' => false,
+    'layout_boxed' => false,
+    'layout_fixed_sidebar' => false,
     'layout_fixed_navbar' => null,
-    'layout_fixed_footer' => false,
+    'layout_fixed_footer' => true,
     'layout_dark_mode' => false,
 
     /*
@@ -149,13 +149,13 @@ return [
 
     'sidebar_mini' => 'lg',
     'sidebar_collapse' => false,
-    'sidebar_collapse_auto_size' => true,
-    'sidebar_collapse_remember' => false,
-    'sidebar_collapse_remember_no_transition' => true,
+    'sidebar_collapse_auto_size' => false,
+    'sidebar_collapse_remember' => true,
+    'sidebar_collapse_remember_no_transition' => null,
     'sidebar_scrollbar_theme' => 'os-theme-light',
     'sidebar_scrollbar_auto_hide' => 'l',
-    'sidebar_nav_accordion' => true,
-    'sidebar_nav_animation_speed' => 300,
+    'sidebar_nav_accordion' => false,
+    'sidebar_nav_animation_speed' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -258,12 +258,12 @@ return [
         ['header' => 'account_settings'],*/
         [
             'text' => 'home',
-            'url'  => 'admin/home',
+            'url'  => '/home',
             'icon' => 'fas fa-fw fa-home',
         ],
         [
             'text' => 'perfil',
-            'url'  => 'admin/perfil',
+            'url'  => 'perfil',
             'icon' => 'fas fa-fw fa-user',
         ],
         [

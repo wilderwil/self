@@ -33,6 +33,7 @@
 
 
     </div>
+ 
     <div class="row   " >
             <div class="col-md-12 justify-content-center align-items-center banner-informativo" style="width:920px; height:253px">
                 Banner informativo
@@ -43,7 +44,7 @@
                 Banner informativo 2
             </div>
         </div>
-        <drag></drag>
+      
 
     </div>
 @endsection

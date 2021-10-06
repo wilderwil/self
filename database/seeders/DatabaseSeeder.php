@@ -18,10 +18,11 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(PreferenceSeeder::class);
-        $this->call(PreferenceUserSeeder::class);
+        $this->call(ActivityUserSeeder::class);
         $this->call(HourSeeder::class);
         $this->call(AsignaturaSeeder::class);
         $this->call(DaySeeder::class);
         $this->call(CourseSeeder::class);
+        $this->call(HorariosSeeder::class);
     }
 }

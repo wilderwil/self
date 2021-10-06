@@ -33,7 +33,8 @@ Vue.component('drag', require('./components/Drag.vue').default);
 Vue.component('preferences', require('./components/PreferencesComponent.vue').default);
 Vue.component('activities', require('./components/ActivitiesComponent.vue').default);
 Vue.component('courses', require('./components/CoursesComponent.vue').default);
-
+Vue.component('dragcomponent', require('./components/DragComponent.vue').default);
+Vue.component('youtube', require('./components/YoutubeComponent.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

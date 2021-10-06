@@ -5,7 +5,7 @@
      <div
           class="list-group-item-drag"
           v-for="element in preferences"
-          :key="element.description"
+          :key="element.id"
         >
         {{element.description}}
     </div>

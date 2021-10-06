@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Chat from './views/Chat';
 import ChatsComponent from './components/ChatsComponent';
-Vue.use(VueRouter)
+// Vue.use(VueRouter)
 
 
 
