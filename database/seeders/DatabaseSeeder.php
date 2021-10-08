@@ -20,9 +20,10 @@ class DatabaseSeeder extends Seeder
         $this->call(PreferenceSeeder::class);
         $this->call(ActivityUserSeeder::class);
         $this->call(HourSeeder::class);
+        $this->call(CourseSeeder::class);
         $this->call(AsignaturaSeeder::class);
         $this->call(DaySeeder::class);
-        $this->call(CourseSeeder::class);
+      
         $this->call(HorariosSeeder::class);
     }
 }

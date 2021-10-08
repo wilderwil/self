@@ -29,10 +29,12 @@ Route::get('/programs',[App\Http\Controllers\ProgramController::class, 'index'])
 Route::get('/program_detail',[App\Http\Controllers\ProgramController::class, 'detail'])->name('program_detail');
 Route::get('/messages',[App\Http\Controllers\ChatsController::class, 'fetchMessages']);
 Route::post('/messages',[App\Http\Controllers\ChatsController::class, 'sendMessage']);
-Route::get('/preferences',[App\Http\Controllers\PreferencesController::class, 'fetchPreferences']);
+//Route::get('/preferences',[App\Http\Controllers\PreferencesController::class, 'fetchPreferences']);
 Route::get('/alumno',[App\Http\Controllers\AlumnoController::class, 'index']);
 Route::post('/save',[App\Http\Controllers\AlumnoController::class, 'save']);
 Route::get('/activities',[App\Http\Controllers\ActivitiesController::class, 'fetchActivities']);
 Route::get('/courses',[App\Http\Controllers\CoursesController::class, 'fetchCourses']);
 Route::post('/activities_alumno',[App\Http\Controllers\AlumnoController::class, 'store']);
 Route::delete('/activities_alumno',[App\Http\Controllers\AlumnoController::class, 'destroy']);
+Route::resource('preferences', App\Http\Controllers\PreferencesController::class);
+Route::resource('asignaturas', App\Http\Controllers\AsignaturasController::class);

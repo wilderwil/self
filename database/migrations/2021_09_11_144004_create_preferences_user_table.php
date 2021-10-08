@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAsignaturasTable extends Migration
+class CreatePreferencesUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateAsignaturasTable extends Migration
      */
     public function up()
     {
-        Schema::create('asignaturas', function (Blueprint $table) {
+        Schema::create('preferences_user', function (Blueprint $table) {
             $table->id();
-            $table->string('code')->unique();
-            $table->string('asignatura');
-            $table->foreignId('course_id')->constrained('courses','id');
+            $table->integer('user_id');
+            $table->foreignId('preference_id')->constrained('preferences','id');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateAsignaturasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asignaturas');
+        Schema::dropIfExists('preferences_user');
     }
 }

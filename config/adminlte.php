@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 return [
 
     /*
@@ -257,8 +257,8 @@ return [
         ],
         ['header' => 'account_settings'],*/
         [
-            'text' => 'home',
-            'url'  => '/home',
+            'text' => 'Home',
+            'url'  => 'home',
             'icon' => 'fas fa-fw fa-home',
         ],
         [
@@ -280,6 +280,22 @@ return [
             'url'  => 'programs',
             'icon' => 'fas fa-fw  fa-clipboard-list',
         ],
+        [
+            'text' => 'Administrar',
+            'icon' => 'fas fa-fw  fa-clipboard-list',
+            'submenu' => [
+                [
+                    'text' => 'Preferencias',
+                     'route' => 'preferences.index',
+                     'active' => ['preferences*'],
+                ],
+                [
+                    'text' => 'Asignaturas',
+                     'route' => 'asignaturas.index',
+                     'active' => ['asignaturas*'],
+                ],
+            ],
+        ]
         
         /*
         [
