@@ -15,12 +15,13 @@ class PreferencesController extends Controller
      */
     public function index(Request $request)
     {
-        $preferences = Preference::all();
+        //$preferences = Preference::all();
+        $preferences = Preference::paginate(10);
         if ($request->has('search')) {
-            $preferences = Preference::where('description', 'like', "%{$request->search}%")->get();
+            $preferences = Preference::where('description', 'like', "%{$request->search}%")->paginate(10);
         }else
         {
-            $preferences = Preference::all();
+            $preferences = Preference::paginate(10);
         }
         
         return view('preferences.index', compact('preferences'));
@@ -102,5 +103,9 @@ class PreferencesController extends Controller
         $preference->delete();
 
         return redirect()->route('preferences.index')->with('message', 'Preferencia eliminada');
+    }
+ 
+    public function fetchPreferences(){
+        return Preference::All();
     }
 }

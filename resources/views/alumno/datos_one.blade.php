@@ -6,7 +6,7 @@
 </div>
 <div class =" div-registro datos" >
     
-<form method="POST" action="save" id="form-register" style="margin-top:-50px;">
+<form method="POST" action="alumno_save" id="form-register" style="margin-top:-50px;">
                         @csrf
                         <div class="form-group row" style="padding-left:50px;margin-top:80px">
                         <h3 >{{ __('Ingreso Datos Alumno') }}</h3>
@@ -15,11 +15,11 @@
 
 
                         <div class="form-group row" >
-                           
+                        
 
                             <div class="col-md-8 div-field offset-md-1">
                             <label for="name" class="col-form-label text-md-right">{{ __('Nombre') }}</label>
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $alumno[0]->name ?? old('name') }}"  autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -33,7 +33,7 @@
 
                            <div class="col-md-4 div-field offset-md-1">
                            <label for="date" class="col-form-label text-md-right">{{ __('Fecha') }}</label>
-                               <input id="date" type="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}"  autocomplete="date" autofocus>
+                               <input id="date" type="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{$alumno[0]->date ?? old('date') }}"  autocomplete="date" autofocus>
 
                                @error('date')
                                    <span class="invalid-feedback" role="alert">
@@ -64,7 +64,7 @@
                             <div class="col-md-8 div-field offset-md-1">
                             <label for="asignatura" class=" col-form-label text-md-right">{{ __('¿Cual es tu asignatura favorita?') }}</label>
 
-                                <input id="asignatura" type="text" class="form-control @error('asignatura') is-invalid @enderror" name="asignatura" value="{{ old('asignatura') }}"  autocomplete="asignatura">
+                                <input id="asignatura" type="text" class="form-control @error('asignatura') is-invalid @enderror" name="asignatura" value="{{$alumno[0]->asignatura ?? old('asignatura') }}"  autocomplete="asignatura">
 
                                 @error('asignatura')
                                     <span class="invalid-feedback" role="alert">
@@ -79,7 +79,7 @@
                             <div class="col-md-8 div-field offset-md-1">
                             <label for="profesor" class="col-form-label text-md-right">{{ __('¿Cual es tu profesor de confianza?') }}</label>
 
-                                <input id="profesor" type="profesor" class="form-control @error('profesor') is-invalid @enderror" name="profesor" autocomplete="profesor">
+                                <input id="profesor" type="profesor" class="form-control @error('profesor') is-invalid @enderror" name="profesor" value="{{$alumno[0]->profesor ?? old('profesor') }}" autocomplete="profesor">
 
                                 @error('profesor')
                                     <span class="invalid-feedback" role="alert">
@@ -94,7 +94,7 @@
                             <div class="col-md-8 div-field offset-md-1">
                             <label for="amigos" class="col-form-label text-md-right">{{ __('¿Cuales son tus compañer@s mas cercanos?') }}</label>
 
-                                <input id="amigos" type="text" class="form-control" name="amigos" autocomplete="amigos">
+                                <input id="amigos" type="text" class="form-control" name="amigos"  value="{{$alumno[0]->amigos ?? old('amigos') }}" autocomplete="amigos">
                                 @error('amigos')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -157,9 +157,12 @@
     </style>
 @stop
 @section('javascript')
+<!-- <script src="../js/domReady.js" defer></script> -->
 <script>
+   /* domReady(function(event) {
+    document.getElementById('course_select').selectedOptions[0].value});*/
 
- document.getElementById('course_select').selectedOptions[0].value
-</script>
-<script src="{{ mix('js/app.js') }}" defer></script>
+   // document.getElementById('course_select').selectedOptions[0].value
+ </script>
+
 @stop

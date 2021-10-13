@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <table class="table">
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">#Id</th>
@@ -55,9 +55,17 @@
                                 </td>
                             </tr>
                         @endforeach
+     
                     </tbody>
                 </table>
             </div>
+            <div class="d-flex justify-content-center">
+            {{ $preferences->links() }}
+</div>
         </div>
     </div>
+    <style>
+        .table td, .table th {
+    padding: .4rem;}
+    </style>
 @endsection

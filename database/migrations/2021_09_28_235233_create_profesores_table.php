@@ -17,14 +17,13 @@ class CreateProfesoresTable extends Migration
             $table->id();
             $table->string('name');
             $table->date('date');
-            $table->unsignedBigInteger('jefatura_id');
-            $table->unsignedBigInteger('course_id');
+            $table->foreignId('jefatura_id')->unique()->constrained('courses','id');
             $table->string('rut');
             $table->string('direction');
             $table->string('comuna');
-            $table->string('email');
             $table->string('phone');
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->unique()->constrained('users','id');
+            $table->integer('complete')->nullable();
             $table->timestamps();
             
         });

@@ -258,9 +258,10 @@ return [
         ['header' => 'account_settings'],*/
         [
             'text' => 'Home',
-            'url'  => 'home',
+            'vue'  => '/home',
             'icon' => 'fas fa-fw fa-home',
         ],
+       
         [
             'text' => 'perfil',
             'url'  => 'perfil',
@@ -294,9 +295,23 @@ return [
                      'route' => 'asignaturas.index',
                      'active' => ['asignaturas*'],
                 ],
+                
+            ],
+        ],
+        [
+            'text' => 'Administrar',
+            'icon' => 'fas fa-fw  fa-clipboard-list',
+            'can' => 'Profesor',
+            'submenu' => [
+                [
+                    'text' => 'Horario',
+                     'route' => 'profesor_fill',
+                     'active' => ['horario*'],
+                ],
+
+                
             ],
         ]
-        
         /*
         [
             'text'    => 'multilevel',

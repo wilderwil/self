@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Chat from './views/Chat';
-import ChatsComponent from './components/ChatsComponent';
+import YoutubeComponent from './components/YoutubeComponent';
 // Vue.use(VueRouter)
 
 
@@ -13,16 +13,16 @@ const routes = [
  
    
 },
-  { path: '/test',
-  name:'test', 
-  component:  ChatsComponent},
+  { path: '/home',
+  name:'youtube', 
+  component:  YoutubeComponent},
 
      
   ];
 console.log("routes");
 const router = new VueRouter({
    
-  routes // short for `routes: routes`
+  routes :routes// short for `routes: routes`
   ,mode:'history',
 
 });

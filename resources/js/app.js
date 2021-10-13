@@ -3,9 +3,9 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-import Vue from 'vue';
+ import Vue from 'vue';
  import VueChatScroll from 'vue-chat-scroll'
- import Router from 'vue-router'
+ import VueRouter from 'vue-router'
  import App from './App.vue'
  import router from './routes'
 require('./bootstrap');
@@ -14,7 +14,7 @@ window.Vue = require('vue').default;
 
 Vue.use(VueChatScroll)
 
-Vue.use(Router);
+Vue.use(VueRouter);
 
 /**
  * The following block of code may be used to automatically register your
@@ -34,6 +34,8 @@ Vue.component('preferences', require('./components/PreferencesComponent.vue').de
 Vue.component('activities', require('./components/ActivitiesComponent.vue').default);
 Vue.component('courses', require('./components/CoursesComponent.vue').default);
 Vue.component('dragcomponent', require('./components/DragComponent.vue').default);
+Vue.component('profesor', require('./components/ProfesorComponent.vue').default);
+Vue.component('operations', require('./components/OperationsComponent.vue').default);
 Vue.component('youtube', require('./components/YoutubeComponent.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -49,9 +51,9 @@ const app = new Vue({
 */
 const app = new Vue({
     el: '#app',
-    //components:{
-     //   App
-   // },
+    components:{
+        App
+    },
    // render: h=>h(App),
-   // router
+    router
 })

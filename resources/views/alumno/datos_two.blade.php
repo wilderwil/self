@@ -139,7 +139,7 @@
 
 <div class =" div-registro datos" >
     
-<form method="POST" action="save" id="form-register" style="margin-top:-50px;">
+<form method="POST" action="alumno_complete" id="form-register" style="margin-top:-50px;">
                         @csrf
                         <div class="form-group row" style="padding-left:50px;margin-top:80px">
                         <h3 >{{ __('Ingreso Datos Alumno') }}</h3>

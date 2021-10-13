@@ -63,4 +63,7 @@ class User extends Authenticatable
     public function preferences(){
         return $this->belongsToMany(Preference::class);
     }
+    public function alumno(){
+        return $this->belongsTo(Alumno::class);
+    }
 }

@@ -24,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-       return view('home');
+      return view('admin');
+       //return view('home');
      /* $horario = new Horario();
      $hours =$horario->where('course_id','=',1)->get();
 

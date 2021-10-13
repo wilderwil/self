@@ -21,7 +21,8 @@ class CreateAlumnosTable extends Migration
             $table->string('profesor');
             $table->integer('course_id');
             $table->string('asignatura');
-            $table->integer('user_id');
+            $table->foreignId('user_id')->unique()->constrained('users','id');
+            $table->integer('complete')->nullable();
             $table->timestamps();
         });
     }

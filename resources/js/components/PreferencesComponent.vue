@@ -32,7 +32,7 @@
           },
         methods: {
             fechPreferences() {
-                axios.get('/preferences').then(response => {
+                axios.get('/preferences_view').then(response => {
                 this.preferences = response.data;
             })
             },
