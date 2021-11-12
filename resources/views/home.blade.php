@@ -23,6 +23,7 @@
         grid-column: 2;
         grid-row: 2;
         position: relative;
+        width: 135px;
     }
 
     .face-8,
@@ -69,8 +70,8 @@
     
 .likert-draw{
   width: 100%;
-  height: 40px;
-  grid-column: 2/7;
+  height: 46px;
+  grid-column: 2/8;
   grid-row: 2;
   display:grid;
   place-items: center;
@@ -78,8 +79,8 @@
 
 .likert-draw .static-bar{
   width: 100%;
-  height: 1.7rem;
-  border: 0.05rem solid blue;
+  height: 27px;
+  border: 0.1px solid blue;
   border-radius: 50px;
 }
 
@@ -87,10 +88,11 @@
   width: 50%;
   height: 100%;
   border-radius: 50px;
+  background-color: green;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: green;
+
 }
 
 .likert-btn{
@@ -111,15 +113,36 @@
   height: 22px;
   border-radius: 100px;
 }
-#btn7:checked ~ div .likert-bar,
-#btn6:checked ~ div .likert-bar,
-#btn8:checked ~ div .likert-bar,
-#btn5:checked ~ div .likert-bar,
-#btn4:checked ~ div .likert-bar,
-#btn3:checked ~ div .likert-bar,
-#btn2:checked ~ div .likert-bar,
+#btn8:checked ~ div .likert-bar{
+    width: 96%;
+    transition-duration: 1s;
+}
+#btn7:checked ~ div .likert-bar{
+    width: 83%;
+    transition-duration: 1s;
+}
+ #btn6:checked ~ div .likert-bar {
+    width: 71%;
+    transition-duration: 1s;
+}
+#btn5:checked ~ div .likert-bar{
+    width: 58%;
+    transition-duration: 1s;
+}
+#btn4:checked ~ div .likert-bar{
+    width: 46%;
+    transition-duration: 1s;
+}
+#btn3:checked ~ div .likert-bar{
+    width: 33%;
+    transition-duration: 1s;
+}
+#btn2:checked ~ div .likert-bar{
+    width: 20%;
+    transition-duration: 1s;
+}
 #btn1:checked ~ div .likert-bar{
-    width: 30%;
+    width: 7%;
     transition-duration: 1s;
 }
 #btn8:checked ~ label .face-8 .face-draw img,
@@ -139,16 +162,10 @@ input[type="radio"]{display:none}
 @section('content')
 {{ Auth::user()->name }}
 {{-- Minimal --}}
-<x-adminlte-modal id="modalMin" title="Minimal" size="lg">
-<div class="likert-draw">
-  <div class="static-bar">
-    <div class="likert-bar" >
-      <div class="likert-btn" >
-        <div class="likert-btn-decorate"></div>
-      </div>
-    </div>
-  </div>
-</div>
+<mood :user_id="{{ Auth::user()->id}}"></mood>
+<file-upload-component></file-upload-component>
+<!-- <x-adminlte-modal id="modalMin" title="Minimal" size="xl">
+
 <input type="radio" id="btn1" name="btn" >
 <label for="btn1">
     <div class="space-blank"></div>
@@ -229,7 +246,16 @@ input[type="radio"]{display:none}
     </div>
     <div class="label-8">Muy Triste</div>
 </label>
-</x-adminlte-modal>
+<div class="likert-draw">
+  <div class="static-bar">
+    <div class="likert-bar" >
+      <div class="likert-btn" >
+        <div class="likert-btn-decorate"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-adminlte-modal> -->
 {{-- Example button to open modal --}}
 <x-adminlte-button label="Open Modal" data-toggle="modal" data-target="#modalMin"/>
 

@@ -39,9 +39,9 @@ class LoginController extends Controller
     }
     public function authenticated($request , $user){
         
-        if($user->role->nombre_rol=='Alumno'){
+        if($user->hasRole('Alumno')){
             return redirect()->route('alumno') ;
-        }elseif ($user->role->nombre_rol=='Profesor'){
+        }elseif ($user->hasRole('Profesor')){
             return redirect()->route('profesor') ;
         }
     }

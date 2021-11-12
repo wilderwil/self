@@ -11,11 +11,11 @@
                 <div class="card">
                     <div class="card-header">
                         {{ __('Editar Preferencias') }}
-                        <a href="{{ route('preferences.index') }}" class="float-right">Back</a>
+                        <a href="{{ route('admin.preferences.index') }}" class="float-right">Back</a>
                     </div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('preferences.update', $preference->id) }}">
+                        <form method="POST" action="{{ route('admin.preferences.update', $preference->id) }}">
                             @csrf
                             @method('PUT')
                             <div class="form-group row">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="m-2 p-2">
-                    <form method="POST" action="{{ route('preferences.destroy', $preference->id) }}">
+                    <form method="POST" action="{{ route('admin.preferences.destroy', $preference->id) }}">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger">Delete {{ $preference->name }}</button>

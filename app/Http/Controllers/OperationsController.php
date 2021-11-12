@@ -70,7 +70,7 @@ class OperationsController extends Controller
      */
     public function edit(Operation $operation)
     {
-        return view ('preferences.edit',compact('operation'));
+        return view ('operations.edit',compact('operation'));
 
     }
 
@@ -87,7 +87,7 @@ class OperationsController extends Controller
             'description' => $request->description
         ]);
 
-        return redirect()->route('preferences.index')->with('message', 'Preferencia Avtualizada Correctamente');
+        return redirect()->route('operations.index')->with('message', 'Operation Avtualizada Correctamente');
            
     }
 

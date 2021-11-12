@@ -8,9 +8,15 @@
  import VueRouter from 'vue-router'
  import App from './App.vue'
  import router from './routes'
+ import {asset} from '@codinglabs/laravel-asset'
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+Vue.mixin({
+    methods: {
+        asset: asset
+    }
+})
 
 Vue.use(VueChatScroll)
 
@@ -37,6 +43,10 @@ Vue.component('dragcomponent', require('./components/DragComponent.vue').default
 Vue.component('profesor', require('./components/ProfesorComponent.vue').default);
 Vue.component('operations', require('./components/OperationsComponent.vue').default);
 Vue.component('youtube', require('./components/YoutubeComponent.vue').default);
+Vue.component('mood', require('./components/MoodComponent.vue').default);
+Vue.component('file-upload-component', require('./components/FileUpload.vue').default);
+Vue.component('link-youtube-store-component', require('./components/LinkYoutubeStore.vue').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -54,6 +64,8 @@ const app = new Vue({
     components:{
         App
     },
+
    // render: h=>h(App),
-    router
+    router,
+
 })

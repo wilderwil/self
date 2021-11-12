@@ -11,6 +11,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Alumno;
 use App\Models\Horario;
+use App\Models\Program;
 use App\Models\User;
 
 class AlumnoController extends Controller
@@ -103,5 +104,14 @@ class AlumnoController extends Controller
                      ->where('activity_id', '=' ,request('activity_id'))
                      ->where('day_id' ,'=',request('day_id'))->delete();
         //$activityUser->delete();
+    }
+    public function programs(){
+        $programs = Program::all();
+        return view('alumno.programs',compact('programs'));
+    }
+    public function program_detail(Request $request){
+        $program_id = $request->id;
+        $program = Program::find($program_id);
+        return view('alumno.program_detail',compact('program'));      
     }
 }

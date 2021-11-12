@@ -18,7 +18,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col">
-                        <form method="GET" action="{{ route('preferences.index') }}">
+                        <form method="GET" action="{{ route('admin.preferences.index') }}">
                             <div class="form-row align-items-center">
                                 <div class="col">
                                     <input type="search" name="search" class="form-control mb-2" id="inlineFormInput"
@@ -31,7 +31,7 @@
                         </form>
                     </div>
                     <div>
-                        <a href="{{ route('preferences.create') }}" class="btn btn-primary mb-2">Create</a>
+                        <a href="{{ route('admin.preferences.create') }}" class="btn btn-primary mb-2">Create</a>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                                 <th scope="row">{{ $preference->id }}</th>
                                 <td>{{ $preference->description }}</td>
                                 <td>
-                                    <a href="{{ route('preferences.edit', $preference->id) }}"
+                                    <a href="{{ route('admin.preferences.edit', $preference->id) }}"
                                         class="btn btn-success">Edit</a>
                                 </td>
                             </tr>

@@ -1,5 +1,5 @@
 <aside class="main-sidebar {{ config('adminlte.classes_sidebar', 'sidebar-dark-primary elevation-4') }}
-{{ auth()->user()->roleName() == 'Profesor'? 'profesor':''}}">
+{{ auth()->user()->hasRole('Profesor') ? 'profesor':'alumno'}}">
 
     {{-- Sidebar brand logo --}}
     @if(config('adminlte.logo_img_xl'))

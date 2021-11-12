@@ -24,7 +24,7 @@ class PreferencesController extends Controller
             $preferences = Preference::paginate(10);
         }
         
-        return view('preferences.index', compact('preferences'));
+        return view('admin.preferences.index', compact('preferences'));
     }
 
     /**
@@ -34,7 +34,7 @@ class PreferencesController extends Controller
      */
     public function create()
     {
-        return view('preferences.create'); 
+        return view('admin.preferences.create'); 
     }
 
     /**
@@ -48,7 +48,7 @@ class PreferencesController extends Controller
         
         Preference::create($request->validated());
 
-        return redirect()->route('preferences.index')->with('message', 'Preferencia Creada');
+        return redirect()->route('admin.preferences.index')->with('message', 'Preferencia Creada');
     }
 
     /**
@@ -70,7 +70,7 @@ class PreferencesController extends Controller
      */
     public function edit(Preference $preference)
     {
-        return view ('preferences.edit',compact('preference'));
+        return view ('admin.preferences.edit',compact('preference'));
 
     }
 
@@ -87,7 +87,7 @@ class PreferencesController extends Controller
             'description' => $request->description
         ]);
 
-        return redirect()->route('preferences.index')->with('message', 'Preferencia Avtualizada Correctamente');
+        return redirect()->route('admin.preferences.index')->with('message', 'Preferencia Avtualizada Correctamente');
            
     }
 
@@ -102,7 +102,7 @@ class PreferencesController extends Controller
         
         $preference->delete();
 
-        return redirect()->route('preferences.index')->with('message', 'Preferencia eliminada');
+        return redirect()->route('admin.preferences.index')->with('message', 'Preferencia eliminada');
     }
  
     public function fetchPreferences(){

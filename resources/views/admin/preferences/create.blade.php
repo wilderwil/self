@@ -11,11 +11,11 @@
                 <div class="card">
                     <div class="card-header">
                         {{ __('Crear Preferencias') }}
-                        <a href="{{ route('preferences.index') }}" class="float-right">Back</a>
+                        <a href="{{ route('admin.preferences.index') }}" class="float-right">Back</a>
                     </div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('preferences.store') }}">
+                        <form method="POST" action="{{ route('admin.preferences.store') }}">
                             @csrf
                             <div class="form-group row">
                                 <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>

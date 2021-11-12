@@ -66,7 +66,7 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => true,
+    'usermenu_header' => false,
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => false,
     'usermenu_desc' => false,
@@ -276,23 +276,48 @@ return [
             'url'  => 'chat',
             'icon' => 'fas fa-fw fa-comments',
         ],
+
         [
-            'text' => 'Programs',
-            'url'  => 'programs',
+            'text' => 'Programas',
             'icon' => 'fas fa-fw  fa-clipboard-list',
-        ],
+           // 'url'  => 'profesor_programs',
+            'can' => 'profesor.programs',
+            'submenu' => [
+                [
+                    'text' => 'Cargar Recursos',
+                     'url' => 'profesor_programs',
+                     'active' => ['Programas*'],
+                ],
+                [
+                    'text' => 'Ver Recursos',
+                     'url' => 'profesor_view',
+                     'active' => ['Programas*'],
+                ],
+                
+            ],
+     ],
+             
+     [
+        'text' => 'Programas',
+        'icon' => 'fas fa-fw  fa-clipboard-list',
+        'url'  => 'alumno_programs',
+        'can' => 'alumno.programs',
+        //'vue' => 'profesor.programs',
+ ],
+        
         [
             'text' => 'Administrar',
             'icon' => 'fas fa-fw  fa-clipboard-list',
+            'can'=>'admin.preferences.*',
             'submenu' => [
                 [
                     'text' => 'Preferencias',
-                     'route' => 'preferences.index',
+                     'route' => 'admin.preferences.index',
                      'active' => ['preferences*'],
                 ],
                 [
                     'text' => 'Asignaturas',
-                     'route' => 'asignaturas.index',
+                     'route' => 'admin.asignaturas.index',
                      'active' => ['asignaturas*'],
                 ],
                 
@@ -301,11 +326,11 @@ return [
         [
             'text' => 'Administrar',
             'icon' => 'fas fa-fw  fa-clipboard-list',
-            'can' => 'Profesor',
+            'can' => 'profesor.fill',
             'submenu' => [
                 [
                     'text' => 'Horario',
-                     'route' => 'profesor_fill',
+                     'route' => 'profesor.fill',
                      'active' => ['horario*'],
                 ],
 

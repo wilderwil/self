@@ -5,7 +5,7 @@
         <div class="embed-responsive embed-responsive-16by9">
             <iframe 
                 class="embed-responsive-item"
-                :src="'https://www.youtube.com/embed/' + videoSelected.id"
+                :src=" videoSelected.url_name"
                 frameborder="0"
                 allowfullscreen></iframe>
         </div>
@@ -30,28 +30,28 @@
 <script>
     export default {
         name: 'youtube',
-        props: ['url'],
+        props: {url:String,program_id:Number},
         data() {
             return {
                 videoList: [],
                 categorySelected: 'all',
                 videoSelected: {
-                    id: 'I4uNDXlKFLU',
+                    url_name: 'https://www.youtube.com/embed/I4uNDXlKFLU',
                     description: 'SocioEmocional'
                 }
             }
         },
         mounted() {
-            this.getVideos();
+            //this.getVideos();
+            this.fechVideos()
         },
         methods: {
-            getVideos() {
-                let self = this;
-                /*$.post(this.url, function(x) {
-                    self.videoList = x;
-                }, 'json')*/
-                self.videoList = [{category:'music',title:'Educación Socioemocional',description:'Dinámica la palma de mi mano',videoId:'I4uNDXlKFLU'},{category:'music',title:'Video 2',description:'Por qué es importante el aprendizaje socioemocional',videoId:'LfxEVHY7Ex0'}]
+            fechVideos() { console.log("program",this.program_id)
+                axios.get('/videos/'+this.program_id).then(response => { console.log(response.data)
+                this.videoList = response.data;
+            })
             },
+
             getVideoList() {
                 let self = this;
                 return this.videoList.filter(x => {
@@ -63,7 +63,7 @@
                 });
             },
             selectVideo(video) {
-                this.videoSelected.id = video.videoId;
+                this.videoSelected.url_name = video.url_name;
                 this.videoSelected.description = video.description;
             }
         }

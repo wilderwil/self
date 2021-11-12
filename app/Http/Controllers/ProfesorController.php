@@ -11,7 +11,10 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Horario;
 use App\Models\Hour;
 use App\Models\Profesor;
+use App\Models\User;
 use App\Models\OperationsProfesor;
+use App\Models\Program;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 class ProfesorController extends Controller
@@ -112,10 +115,9 @@ class ProfesorController extends Controller
         //$activityUser->delete();
     }
     public function fill(){
-       // print_r($this->middleware('role'));die;
-      //  $user = new User();
-        $role = Auth()->user()->role;
-        if($role->nombre_rol== 'Profesor'){
+      
+        
+         if(Auth()->user()->hasRole('Profesor')){ 
         $horarios = Horario::join('asignatura_profesores', 'asignatura_profesores.asignatura_id', '=', 'horarios.asignatura_id')
               ->join('courses', 'horarios.course_id', '=', 'courses.id')
               ->where('asignatura_profesores.profesor_id',Auth()->user()->id)
@@ -174,6 +176,23 @@ class ProfesorController extends Controller
     </table>';
     return $html;
     }
-    
+    public function programs(){
+        $programs = Program::all();
+        return view('profesor.programs',compact('programs'));
+    }
+    public function program_detail(Request $request){
+        $program_id = $request->id;
+        $program = Program::find($program_id);
+        return view('profesor.program_detail',compact('program'));
+    }
+    public function programs_view(){
+        $programs = Program::all();
+        return view('profesor.programs_view',compact('programs'));
+    }
+    public function program_detail_view(Request $request){
+        $program_id = $request->id;
+        $program = Program::find($program_id);
+        return view('profesor.program_detail_view',compact('program'));
+    }  
 }
     

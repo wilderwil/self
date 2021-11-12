@@ -4,7 +4,7 @@
 -->
 <nav class="main-header navbar 
     {{ config('adminlte.classes_topnav_nav', 'navbar-expand') }}
-    {{ auth()->user()->roleName() == 'Profesor' ? 'navbar-success' : 'navbar-primary' }}
+    {{ auth()->user()->hasRole('Profesor') ? 'navbar-success' : 'navbar-primary' }}
     navbar-light ">
    
     {{-- Navbar left links --}}
